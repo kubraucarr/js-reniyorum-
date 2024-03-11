@@ -439,19 +439,19 @@
 
 //CALL APPLY BİND
 
-const obj1={
-  number1:10,
-  number2:20
-};
+//const obj1={
+ // number1:10,
+ // number2:20
+//};
 
-const obj2={
-  number1:30,
-  number2:40
-}
+//const obj2={
+ // number1:30,
+ // number2:40
+//}
 
-function addNumbers(number3,number4){
-  console.log(this.number1 + this.number2 + number3 + number4);
-}
+//function addNumbers(number3,number4){
+  ///console.log(this.number1 + this.number2 + number3 + number4);
+//}
 //addNumbers(100,200); // burada this window objesi ile geliyordu
 
 //aşağıda this i obj1 ve obj2 ile çağıracağız
@@ -462,11 +462,42 @@ function addNumbers(number3,number4){
 //addNumbers.apply(obj1,[100,200]);
 
 //şimdi bind i yapalım 
-function getNumbersTotal(number3,number4){
-  return this.number1 + this.number2 + number3 + number4;
-}
+//function getNumbersTotal(number3,number4){
+ // return this.number1 + this.number2 + number3 + number4;
+//}
 
-const copyFunc1 = getNumbersTotal.bind(obj1);
-console.dir(copyFunc1);
+//const copyFunc1 = getNumbersTotal.bind(obj1);
+//console.dir(copyFunc1);
 
-console.log(copyFunc1(100,200));
+//console.log(copyFunc1(100,200));
+
+
+//KALITIM - INHERITANCE
+
+//function Person(name,age){
+  //this.name=name;
+ // this.age=age;
+//}
+//Person.prototype.showInfos = function(){
+  //console.log("İsim:" + this.name + "Yaş:" + this.age);
+//}
+
+
+//function Employee(name,age,salary){
+  //this.name = name;
+ //this.age = age;
+ //Person.call(this,name,age); //call ile yukaıdaki thisler  yerine tek satırla  aşağıdaki name ve agele çağırıdn 
+ // this.salary = salary;
+//}
+//Employee.prototype=Object.create(Person.prototype);
+
+//OVERRİDİNG - iptal etme
+///Employee.prototype.showInfos = function(){
+ // console.log("İsim:" + this.name + "Yaş:" + this.age + "maaş:" + this.salary);
+//}// maaş yoktu biz ekledik önceki objeyi iptal ettirdik 
+
+
+
+///const emp = new Employee("mustafa",32,5200);
+//console.log(emp);
+//emp.showInfos();
