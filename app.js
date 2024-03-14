@@ -524,17 +524,38 @@
 
 //Şimdi ES6 ile yazalım yukarıdakini 
 
-class Employee {
-  constructor(name,age,salary){
-    this.name = name;
-    this.age = age;
-    this.salary = salary;
-  }
-  showInfos(){
-    console.log("İsim:" + this.name + "Yaş:" + this.age + "Maaş:" + this.salary);
+//class Employee {
+  //constructor(name,age,salary){
+   // this.name = name;
+   // this.age = age;
+   // this.salary = salary;
+  //}
+  //showInfos(){
+  //  console.log("İsim:" + this.name + "Yaş:" + this.age + "Maaş:" + this.salary);
 
-  }
+  //}
 
+//}
+//const emp = new Employee("mustafa",25,54512);
+//console.log(emp);
+//emp.showInfos();
+
+
+//STATİK METODLAR
+//class Matematik {
+ // cube(x) {
+  //  console.log(x*x*x);   //küp metodunu kullanmak için math.cube(x) objesini oluşturmalısın
+ // }
+//}
+//const math = new Matematik();
+//math.cube(3);  //oluşturman gereken obje 
+//console.log(math);
+
+
+//statik metodu kullanarak obje oluşturmadan metodu kullanabilirsin 
+class Matematik {
+  static cube(x) {
+    console.log(x*x*x);
+  }
 }
-const emp = new Employee("mustafa",25,54512);
-console.log(emp);
+Matematik.cube(3);
