@@ -501,3 +501,21 @@
 ///const emp = new Employee("mustafa",32,5200);
 //console.log(emp);
 //emp.showInfos();
+
+
+
+//ES6 SINIFLARI 
+
+//Syntactic Sugar
+function Employee(name,age,salary){
+  this.name = name;
+  this.age = age;
+  this.salary = salary;
+
+}
+Employee.prototype.showInfos = function(){
+  console.log("İsim:" + this.name + "Yaş:" + this.age +"Maaş:" +this.salary);
+
+}
+const emp = new Employee("mustafa",25,6200);
+console.log(emp);
