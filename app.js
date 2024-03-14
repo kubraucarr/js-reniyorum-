@@ -553,9 +553,37 @@
 
 
 //statik metodu kullanarak obje oluşturmadan metodu kullanabilirsin 
-class Matematik {
-  static cube(x) {
-    console.log(x*x*x);
+//class Matematik {
+ // static cube(x) {
+   // console.log(x*x*x);
+ // }
+////}
+//Matematik.cube(3);
+
+//YUKARLARDA KALITIM I GÖRMÜŞTÜRK ŞİMDİ ES6 ile KALITIM yapacağız
+class Person {
+  constructor(name,age){
+    this.name = name;
+    this.age = age;
+
+  }
+  showInfos(){
+    console.log("İsim:" + this.name + "Yaş:" + this.age);
   }
 }
-Matematik.cube(3);
+class Employee extends Person{   //extends yukardakinin özeliklerini al demek
+constructor(name,age,salary) {
+  super(name,age);   // this.name ve this.age ile aynı şey "super" yukardan onları almamızı sağladı
+  this.salary = salary
+}
+showInfos(){ //overriding
+console.log( "İsim:" + this.name + "Yaş:" + this.age + "Maaş:" + this.salary);
+}
+toString(){//overriding
+console.log("Employee");
+}
+}
+
+const emp = new Employee("mustafa",25,5665320);
+emp.showInfos();
+emp.toString();
