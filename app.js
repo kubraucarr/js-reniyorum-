@@ -507,15 +507,34 @@
 //ES6 SINIFLARI 
 
 //Syntactic Sugar
-function Employee(name,age,salary){
-  this.name = name;
-  this.age = age;
-  this.salary = salary;
+//ES6 kullanmadan önce aşağıdaki gibi yazıyorduk fonksiyon ve objelri
+
+//function Employee(name,age,salary){
+ // this.name = name;
+  //this.age = age;
+ // this.salary = salary;
+
+//}
+//Employee.prototype.showInfos = function(){
+ // console.log("İsim:" + this.name + "Yaş:" + this.age + "Maaş:" + this.salary);
+
+//}
+//const emp = new Employee("mustafa",25,6200);
+//console.log(emp);
+
+//Şimdi ES6 ile yazalım yukarıdakini 
+
+class Employee {
+  constructor(name,age,salary){
+    this.name = name;
+    this.age = age;
+    this.salary = salary;
+  }
+  showInfos(){
+    console.log("İsim:" + this.name + "Yaş:" + this.age + "Maaş:" + this.salary);
+
+  }
 
 }
-Employee.prototype.showInfos = function(){
-  console.log("İsim:" + this.name + "Yaş:" + this.age +"Maaş:" +this.salary);
-
-}
-const emp = new Employee("mustafa",25,6200);
+const emp = new Employee("mustafa",25,54512);
 console.log(emp);
